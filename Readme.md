@@ -28,4 +28,4 @@ Using the task is simple. The only mandatory attribute is url and the default HT
 Building the solution
 ---------------------
 
-A post build event in the Visual Studio solution uses the ILMerge tool to merge the _Microsoft.Http.dll_ assembly from the WCF REST Starter Kit merged into the output assembly _AlexMG.NAntTasks.dll_. This makes deployment easier by removing the chance of accidentally forgetting to deploy the _Microsoft.Http.dll_ dependency. You will also need to update the _xcopy_ command in the post-build event to point to the location of your NAnt bin folder.
+A post build event in the Visual Studio solution uses the ILMerge tool to merge the _Microsoft.Http.dll_ assembly (part of the WCF REST Starter Kit) into the output assembly _AlexMG.NAntTasks.dll_. This makes deployment easier by removing the chance of accidentally forgetting to deploy the _Microsoft.Http.dll_ dependency. You will also need to update the _xcopy_ command in the post-build event to point to the location of your NAnt bin folder.
