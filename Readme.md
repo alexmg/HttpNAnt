@@ -13,16 +13,16 @@ Using the task is simple. The only mandatory attribute is url and the default HT
 
 	<?xml version="1.0"?>
 	<project name="Http">
-	  <http url="http://www.howtocreate.co.uk/operaStuff/userjs/samplexml.xml"
-	        method="GET"
-	        contenttype="text/xml"
-	        connectiontimeout="30"
-	        responseproperty="response"
-	        statuscodeproperty="status"
-	        failonerror="true" />
-	 
-	  <echo message="Response: ${response}" />
-	  <echo message="Status Code: ${status}" />
+	  <http url="http://www.howtocreate.co.uk/operaStuff/userjs/samplexml.xml"
+	        method="GET"
+	        contenttype="text/xml"
+	        connectiontimeout="30"
+	        responseproperty="response"
+	        statuscodeproperty="status"
+	        failonerror="true" />
+	
+	  <echo message="Response: ${response}" />
+	  <echo message="Status Code: ${status}" />
 	</project>
 
 Building the solution
