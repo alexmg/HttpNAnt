@@ -107,6 +107,6 @@
   -->
   <PropertyGroup>
     <PostBuildEvent>"$(SolutionDir)..\Tools\ILMerge\ILMerge.exe" /out:"$(SolutionDir)..\Build\$(TargetFileName)" "$(TargetPath)" "$(TargetDir)Microsoft.Http.dll"
-xcopy "$(SolutionDir)..\Build\$(TargetFileName)" C:\Tools\NAnt\bin /y</PostBuildEvent>
+xcopy "$(SolutionDir)..\Build\$(TargetFileName)" $(SolutionDir)..\Dist /y</PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <project name="Http">
+  <loadtasks assembly="..\..\Build\AlexMG.HttpNAnt.dll" />
   <http url="http://www.howtocreate.co.uk/operaStuff/userjs/samplexml.xml"
         method="GET"
         contenttype="text/xml"
