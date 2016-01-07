@@ -13,17 +13,22 @@ Using the task is simple. The only mandatory attribute is url and the default HT
 
 	<?xml version="1.0"?>
 	<project name="Http">
-	  <http url="http://www.howtocreate.co.uk/operaStuff/userjs/samplexml.xml"
+	  <http url="http://httpbin.org/get"
 	        method="GET"
-	        contenttype="text/xml"
+	        contenttype="application/json"
 	        connectiontimeout="30"
 	        responseproperty="response"
 	        statuscodeproperty="status"
-	        failonerror="true" />
+	        failonerror="true" 
+	        username="jdoe"
+	        password="53cr34"
+	        content="{ &quot;greeting}&quot; : &quot;Hello world!&quot; }" />
 	
 	  <echo message="Response: ${response}" />
 	  <echo message="Status Code: ${status}" />
 	</project>
+
+Authentication, if enabled, uses Basic authentication.
 
 Building the solution
 ---------------------
