@@ -6,6 +6,8 @@ using Microsoft.Http;
 
 using NAnt.Core;
 using NAnt.Core.Attributes;
+using Microsoft.Http.Headers;
+
 
 namespace AlexMG.NAntTasks
 {
@@ -50,10 +52,23 @@ namespace AlexMG.NAntTasks
 		[StringValidator(AllowEmpty = true)]
 		public string StatusCodeProperty { get; set; }
 
+        [TaskAttribute("username", Required = false)]
+        [StringValidator(AllowEmpty = true)]
+        public string UserName { get; set; }
+
+        [TaskAttribute("password", Required = false)]
+        [StringValidator(AllowEmpty = true)]
+        public string Password { get; set; }
+
         protected override void ExecuteTask()
         {
             HttpClient client = new HttpClient();
             HttpRequestMessage request = new HttpRequestMessage();
+
+            if (!string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(Password))
+            {
+                client.DefaultHeaders.Authorization = Credential.CreateBasic(UserName, Password);
+            }
 
             if (!string.IsNullOrEmpty(Method))
             {
